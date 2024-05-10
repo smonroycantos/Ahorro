@@ -32,9 +32,9 @@ void mostrar (int mes, float monto, float intmes){
         ganancias=montomes*(intmes/100);
         itotal=itotal+ganancias;
         printf("| Monto Ahorrado | Ganancias | Inversion\n");
-        printf("| %.2f      | %.2f | %.2f\n",montomes, ganancias, (mes/monto)+ganancias);
-        montomes=montomes+ganancias;
+        printf("| %.2f         | %.2f         | %.2f\n",montomes, ganancias, (mes*monto);
+        montomes=montomes+ganancias+monto;
     }
-    printf("| Ahorro | Devolucion Total |\n");
+    printf("\n| Ahorro | Devolucion Total |\n");
     printf("| %.2f | %.2f |\n",montomes-mes*monto, itotal);
 }  
