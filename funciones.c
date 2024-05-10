@@ -7,7 +7,7 @@ void queso (){
 
 float leer (int a){
     float x;
-    printf("Ingrese el valor de %i:",a);
+    printf("\nIngrese el valor %i:",a);
     scanf("%f",&x);
     while (x<=0)
     {
@@ -18,24 +18,23 @@ float leer (int a){
 }
 
 float pikachu (float i){
-    float interesmes;
-    interesmes=i/12;
-    return interesmes;
+    float intmes;
+    intmes=i/12;
+    return intmes;
 }
 
 void mostrar (int mes, float monto, float intmes){
-    float montomes, i, itotal=0;
+    float montomes, ganancias, itotal=0;
     montomes=monto;
-    i=montomes*intmes;
     for (int k = 0; k < mes; k++)
-    {
+    {       
         printf("\n-~-~-Mes %i-~-~-\n",k+1);
-        itotal=itotal+i;
-        montomes=montomes+i;
-        printf("Monto ahorrado: %f\n",montomes);
-        montomes=montomes+monto;
-        printf("Ganancias: %f\n",i);
-        i=montomes*intmes;
+        ganancias=montomes*(intmes/100);
+        itotal=itotal+ganancias;
+        printf("| Monto Ahorrado | Ganancias | Inversion\n");
+        printf("| %.2f      | %.2f | %.2f\n",montomes, ganancias, (mes/monto)+ganancias);
+        montomes=montomes+ganancias;
     }
-    printf("Inversion: %f \nAhorro: %f \nDevolucion total: %f",mes*monto,montomes-monto,itotal);
-}
+    printf("| Ahorro | Devolucion Total |\n");
+    printf("| %.2f | %.2f |\n",montomes-mes*monto, itotal);
+}  
